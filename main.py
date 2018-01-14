@@ -129,7 +129,7 @@ region_contribution = region_contribution.sort_values(['prop'], ascending = Fals
 
 artist_region = spotify_data.groupby(['Artist', 'Region']).agg({'Streams': 'sum'})
 artist_region_g = artist_region['Streams'].groupby(level=0, group_keys=False)
-
+print (artist_region_g.nlargest(3))
 '''
 import plotly.offline as py
 import plotly.graph_objs as go
